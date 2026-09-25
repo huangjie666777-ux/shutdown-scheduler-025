@@ -11,5 +11,6 @@ func NewRouter() http.Handler {
 		w.Header().Set("Content-Type", "application/json")
 		_, _ = w.Write([]byte(`{"status":"ok"}`))
 	})
+	router.Post("/v1/schedule", handleSchedule)
 	return router
 }
